@@ -12,26 +12,31 @@ function ssh_unraid {
 
 function mnt_ha {
     sshfs root@10.10.50.149:/config /home/remco/homeassistant
+    echo "mount home assistant..."
     exit 0
 }
 
 function mnt_unraid {
     sshfs -p 2224 root@10.10.50.60:/mnt/user /home/remco/unraid
+    echo "mount unraid..."
     exit 0
 }
 
 function umnt_ha {
     umount /home/remco/homeassistant
+    echo "umount home assistant..."
     exit 0
 }
 
 function umnt_unraid {
     umount /home/remco/unraid
+    echo "umount unraid..."
     exit 0
 }
 
 function umnt_all {
     umount /home/remco/homeassistant && umount /home/remco/unraid
+    echo "umount all..."
     exit 0
 }
 
