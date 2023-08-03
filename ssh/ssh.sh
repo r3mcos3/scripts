@@ -40,6 +40,11 @@ function umnt_all {
     exit 0
 }
 
+function ssh_unifi {
+  ssh root@10.10.10.1
+  exit 0
+}
+
 while :
 do
     echo "Menu"
@@ -50,7 +55,8 @@ do
     echo "5. Umount Home Assistant Share"
     echo "6. Umount Unraid Server"
     echo "7. Unmount All"
-    echo "8. Exit"
+    echo "8. Ssh To Unifi"
+    echo "9. Exit"
     read -p "Make Your Choice:" choice
 
     case $choice in
@@ -68,7 +74,9 @@ do
         umnt_unraid;;
     7)
         umnt_all;;
-    8)
+    8)  
+        ssh_unifi;;
+    9)
         echo "exiting..."
         exit 0
         ;;
