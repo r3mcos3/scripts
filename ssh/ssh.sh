@@ -6,7 +6,7 @@ function ssh_ha {
 }
 
 function ssh_unraid {
-    ssh -p 2224 root@10.10.50.60
+    ssh root@10.10.50.60
     exit 0
 }
 
@@ -17,7 +17,7 @@ function mnt_ha {
 }
 
 function mnt_unraid {
-    sshfs -p 2224 root@10.10.50.60:/mnt/user /home/remco/unraid
+    sshfs root@10.10.50.60:/mnt/user /home/remco/unraid
     echo "mount unraid..."
     exit 0
 }
